@@ -1,655 +1,654 @@
 @font-face {
-  font-family: 'CustomFont';
-  src: url('/fonts/Outfit-Black.ttf') format('woff');
-  /* Дополнительные форматы, если необходимо */
-}
-
-body {
-  font-family: "Lato", "CustomFont", sans-serif;
-  margin: 0;
-  padding: 0;
-}
-.semi-bold-40 {
-  color: #292D35;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 40px;
-  font-weight: 700; /* semi-bold */
-  text-decoration: underline;
-  text-decoration-thickness: 3px;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1); /* Горизонтальное смещение, вертикальное смещение, радиус размытия и цвет тени */
-}
-
-.semi-bold-30 {
-  color: #292D35;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 30px;
-  font-weight: 600; /* semi-bold */
+    font-family: 'CustomFont';
+    src: url('/fonts/Outfit-Black.ttf') format('woff');
+    /* Дополнительные форматы, если необходимо */
+  }
   
-}
-/* Стиль с размером 18 и bold шрифтом */
-.bold-18 {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 18px;
-  font-weight: bold;
-}
-
-/* Стиль с размером 16 и light шрифтом */
-.light-16 {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 16px;
-  font-weight: 300; /* light */
-}
-
-/* Стиль с размером 20 и normal (стандартным) шрифтом */
-.normal-20 {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 20px;
-  font-weight: normal;
-}
-
-.navbar {
-  width: 300px;
-  background-color: #171E2C;
-  height: 100vh;
-  float: left;
-  position: fixed;
-}
-
-.logo {
-  display: flex;
-  align-items: center;
-}
-
-.logo img {
-  max-width: 100px;
-  max-height: 100px;
-  margin: 10px;
-}
-
-.navbar ul {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-}
-
-.navbar li {
-  display: flex;
-  align-items: center;
-  margin: 0;
-}
-/* Обновленный стиль для жирного текста и картинки стрелочки */
-.about-us a {
-  font-weight: bold;
-  position: relative;
-  display: inline-block;
-  padding-right: 30px; /* Увеличено расстояние для учета стрелочки */
-  margin-left: 10px;
-  transition: background 0.3s ease; /* Анимация изменения цвета фона */
-}
-
-/* Обновленный стиль для картинки стрелочки */
-.about-us a::after {
-  content: '→'; /* Замените на путь к вашему изображению стрелочки */
-  position: absolute;
-  top: 50%;
-  right: 10px; /* Расстояние от края справа */
-  transform: translateY(-50%); /* Позиционирование по вертикали */
-  opacity: 0; /* Начальная прозрачность */
-  transition: transform 0.3s ease, opacity 0.3s ease; /* Анимация при наведении */
-}
-
-/* Анимация при наведении */
-.about-us a:hover {
-  background: rgba(210, 237, 253, 0.1); /* Изменение цвета фона с 10% прозрачностью при наведении */
-}
-
-.about-us a:hover::after {
-  transform: translateX(5px); /* Сдвигаем стрелочку вправо при наведении */
-  opacity: 1; /* Делаем стрелочку видимой */
-}
-
-/* Добавление псевдоэлемента для анимации фона и текста при наведении */
-.navbar li a {
-  position: relative;
-  color: #C8C8C8; /* Цвет текста по умолчанию */
-  margin-left: 20px;
-  transition: color 0.3s ease; /* Анимация изменения цвета текста */
-}
-
-.navbar li a::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: -1;
-  background: rgba(210, 237, 253, 0);
-  transition: background 0.3s ease, width 0.3s ease; /* Добавлена анимация изменения ширины фона */
-}
-
-/* Анимация при наведении на кнопки */
-.navbar li a:hover::before {
-  background: rgba(210, 237, 253, 0.1);
-  width: 100%; /* Изменение ширины фона на 100% при наведении */
-}
-
-.navbar li a:hover {
-  color: #F9B000; /* Изменение цвета текста при наведении */
-}
-
-
-.navbar li a[href="*"] {
-  color: white;
-  font-weight: bold;
-  pointer-events: none; /* Отменяет возможность взаимодействия с ссылкой */
-  cursor: default; /* Заменяет курсор на обычный, так как ссылка недоступна */
-  text-align: center; /* Центрирование текста */
-  width: 100%; /* Растягиваем текст на всю ширину элемента li */
-  box-sizing: border-box; /* Учитываем padding и border внутри элемента li */
-}
-.navbar a {
-  text-decoration: none;
-  color: #C8C8C8;
-  font-size: 14px;
-  padding: 10px;
-  display: block;
-}
-
-.navbar a img {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  margin-bottom: 10px;
-  display: block;
-  transition: transform 0.3s ease-in-out;
-}
-
-.navbar a:hover img {
-  transform: scale(1.2);
-  border: none;
-}
-
-.main-content {
-  margin-left: 300px;
-}
-
-.banner {
-  position: relative;
-}
-
-.slider-container {
-  max-height: 550px;
-  display: flex;
-  margin: 0 auto;
-}
-
-.slider {
-  overflow: hidden;
-}
-
-.slide {
-  position: relative;
-  max-height: 615px;
-  max-width: 1620px;
-}
-.slide img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-.text-overlay p {
-  font-family: "Outfit-Light", sans-serif;
-}
-
-@font-face {
-  font-family: 'Outfit-Light';
-  src: url('/fonts/Outfit-Light.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-.phone-btn,
-.explore-btn {
-  position: absolute;
-  top: 50px;
-  left: 50%;
-  transform: translateX(-50%);
-  border: none;
-  border-radius: 3px;
-  padding: 10px 20px;
-  cursor: pointer;
-}
-
-.phone-btn {
-  background-color: #1C92FF;
-  color: #fff;
-  width: 198px;
-  height: 42px;
-  border-radius: 100px;
-  font-size: 16px;
-  position: absolute;
-  top: 120px; 
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.explore-btn {
-  color: #1C92FF;
-  border: 2px solid #1C92FF;
-  width: 198px;
-  height: 42px;
-  border-radius: 100px;
-  font-size: 16px;
-}
-
-
-.social-icons {
-  padding-top: 40px;
-  margin-top: 40px;
-  display: flex;
-  justify-content: center; /* Отцентровано по горизонтали */
-  align-items: center; /* Отцентровано по вертикали */
-  max-width: 300px;
-  margin: 0 25px;
-
-}
-
-.social-icons img {
-  width: 20px; /* Увеличен размер иконок */
-  height: 20px; /* Увеличен размер иконок */
- 
-  border: 2px solid #909090;
-  padding: 0px;
-  align-items: center;
-  border-radius: 30%; /* Используем 50% для создания круглых иконок */
-  max-width: 20px; /* Установлен максимальный размер ширины */
-  max-height: 20px; /* Установлен максимальный размер высоты */
-  transition: transform 0.3s ease-in-out;
-}
-
-.social-icons a {
-  display: inline-block;
-  margin: 0 2px;
-  max-width: 42px;
-}
-
-
-.social-icons img:hover {
-  transform: scale(1.2);
-}
-
-
-.phone-numb {
-  font-size: 16px;
-  color: #ffffff;
-  background-color: transparent;
-  padding: 10px 0; 
-  cursor: pointer;
-  display: flex;
-  align-items: center; 
-}
-
-.phone-numb:hover {
-  color: rgb(189, 23, 31); 
-}
-.mail-icon {
-  margin-left: 10px; 
-}
-.footer {
-  background-color: #292D35;
-  color: white;
-  text-align: center;
-  padding-top: 10px;
-  position: relative; 
-  bottom: -20px;
-  width: 100%;
-  margin-top: 30px;
-}
-
-.social-icons a {
-  display: inline-block;
-  margin: 0 5px;
-}
-
-.social-icons img {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  transition: transform 0.3s ease-in-out;
-}
-
-.social-icons img:hover {
-  transform: scale(1.2);
-}
-
-.button-nomber {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.text-overlay {
-  position: relative;
-}
-.slide::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5); /* Затемнение с помощью полупрозрачного черного цвета */
-}
-/* .button-container {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100%;
-  box-sizing: border-box;
-  padding: 20px;
-} */
-
-/* .get-quote-btn,
-.contact-us-btn {
-  background-color: #ff8c00;
-  color: white;
-  padding: 10px;
-  margin: 10px;
-  border: none;
-  cursor: pointer;
-  width: 150px;
-  height: 40px;
-}
-
-.get-quote-btn,
-.contact-us-btn {
-  background-color: #ff8c00;
-  color: white;
-  padding: 10px;
-  margin: 10px;
-  border: none;
-  cursor: pointer;
-  width: 150px;
-  height: 40px;
-} */
-
-/* .container1 {
-  position: relative;
-  text-align: center;
-  color: white;
-} */
-
-.text-overlay {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: #fff;
-  text-align: center;
-  width: 100%;
-  max-width: 850px;
-}
-
-.text-overlay h1 {
-  font-size: 36px;
-  text-decoration: underline;
-  margin-bottom: 10px; /* Добавлен отступ снизу */
-}
-
-.text-overlay p {
-  text-align: center;
-  font-size: 16px;
-  max-width: 450px;
-  margin-bottom: 20px; /* Добавлен отступ снизу */
-  line-height: 3.6;
-}
-
-.button-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.get-quote-btn {
-  background-color: #F9B000;
-  color: white;
-  padding: 10px 20px;
-  margin: 0 10px;
-  border: none;
-  cursor: pointer;
-  width: 150px;
-  height: 40px;
-}
-
-.get-quote-btn:hover {
-  background-color: #F9B000;
-}
-
-
-
-
-
-.about-us-container,
-.latest-work-container {
-  display: flex;
-  justify-content: space-between;
-  border-left: 1px solid #000; /* Обводка слева */
-  padding: 20px;
-}
-
-.about-us,
-.latest-work {
-  width: 45%;
-}
-
-.about-us h2
- {
-  text-align: left;
-  border-bottom: 1px solid #000; /* Линия под названием блока */
-  padding-bottom: 10px;
-  margin-bottom: 10px;
-}
-
-.about-us p
- {
-  text-align: left;
-  margin-bottom: 20px;
-}
-
-.explore-btn2 {
-  background-color: transparent;
-  color: orange;
-  padding: 10px;
-  border: 1px solid orange;
-
-  cursor: pointer;
-}
-.about-us-image img {
-  width: 500px;
-  height: 500px;
-  object-fit: cover; /* Сохраняет пропорции изображения и обрезает лишнее */
-  border-radius: 10px;
-}
-
-slider-container1,
-.slider-container2 {
-  max-width: 800px;
-  margin: 50px auto;
-  overflow: hidden;
-  position: relative;
-}
-
-.about-us-container {
-  border: 1.5px solid #c7c7c7; 
-  border-radius: 5px;
-  padding: 20px; 
-  max-width: 800px; 
-  margin: 0 auto; /* Центрирование контейнера */
-  overflow: hidden; /* Используется, чтобы скругление обводки было более корректным */
-  margin-top: 70px;
-  margin-bottom: 50px;
-
-}
-
-.about-us2 {
-  font-family: Arial, sans-serif;
-  color: #909090;
-  max-width: 600px;
-  margin: 0 auto;
-}
-.about-us2 h2 {
-  font-size: 40px;
-  font-weight: 600; /* Semibold */
-  color: #000; /* Black */
-  margin-bottom: 15px;
-}
-
-.about-us2 p {
-  font-size: 16px;
-  font-weight: 300; /* Light */
-  line-height: 1.6;
-  margin-bottom: 15px;
-}
-.latest-work-container {
-  border: 1.5px solid #c7c7c7; 
-  border-radius: 5px;
-  padding: 20px; 
-  max-width: 800px; 
-  margin: 0 auto; /* Центрирование контейнера */
-  overflow: hidden; /* Используется, чтобы скругление обводки было более корректным */
-}
-.latest-work  {
-  font-family: Arial, sans-serif;
-  color: #909090;
-  max-width: 600px;
-  margin: 0 auto;
-}
-
-.latest-work h2 {
-  font-size: 40px;
-  font-weight: 600; /* Semibold */
-  color: #000; /* Black */
-  margin-bottom: 15px;
-}
-
-.latest-work p {
-  font-size: 16px;
-  font-weight: 300; /* Light */
-  line-height: 1.6;
-  margin-bottom: 15px;
-}
-
-
-.lw-slider2 {
-  display: flex;
-  transition: transform 0.5s ease-in-out;
-}
-
-
-.lw-slide2 {
-  min-width: 100%;
-}
-
-.lw-slide2 img {
-  width: 100%;
-  height: auto;
-}
-
-.prev1,
-.next1,
-.prev2,
-.next2 {
-  cursor: pointer;
-  position: absolute;
-  top: 50%;
-  font-size: 18px;
-  color: #fff;
-  background-color: #1C92FF;
-  border: none;
-  padding: 10px;
-}
-
-
-.prev2 {
-  left: 10px;
-}
-
-
-.next2 {
-  right: 10px;
-}
-
-.estimate-form-container {
-  display: flex;
-  justify-content: space-around;
-  background-color: #F2F2F2;
-  padding: 20px;
-}
-
-.form-details {
-  display: flex;
-}
-
-.white-block, .blue-block {
-  padding: 20px;
-  border-radius: 10px;
-  margin: 10px;
-}
-
-.white-block {
-  text-align: center;
-  background-color: #FFFFFF;
-  color: #333333;
-}
-.white-block button {
-  display: inline-block; 
-  margin: 10px; 
-  padding: 10px 20px; 
-}
-.white-block .icon {
-  vertical-align: middle;
-  margin-right: 5px;
-}
-.white-block .contact-info {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.blue-block {
-  background-color: #171E2C;
-  color: #FFFFFF;
-  padding: 30px;
-}
-
-form {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-label {
-  font-weight: bold;
-}
-
-input, textarea {
-  padding: 10px;
-}
-
-button {
-  background-color: #F9B000;
-  color: #FFFFFF;
-  padding: 10px;
-  cursor: pointer;
-  border: none;
-  border-radius: 5px;
-}
-
-button:hover {
-  background-color: #F9B000;
-}
+  body { 
+    margin: 0;
+    padding: 0;
+  }
+  .semi-bold-40 {
+    color: #292D35;
+    font-family: 'Outfit', sans-serif;
+    font-size: 40px;
+    font-weight: 700; /* semi-bold */
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1); /* Горизонтальное смещение, вертикальное смещение, радиус размытия и цвет тени */
+  }
+  
+  .semi-bold-30 {
+    color: #292D35;
+    font-family: 'Outfit', sans-serif;
+    font-size: 30px;
+    font-weight: 600; /* semi-bold */
+    
+  }
+  /* Стиль с размером 18 и bold шрифтом */
+  .bold-18 {
+    font-family: 'Outfit', sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  /* Стиль с размером 16 и light шрифтом */
+  .light-16 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: 300; /* light */
+  }
+  
+  /* Стиль с размером 20 и normal (стандартным) шрифтом */
+  .normal-20 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    font-weight: normal;
+  }
+  
+  .navbar {
+    width: 300px;
+    background-color: #171E2C;
+    height: 100vh;
+    float: left;
+    position: fixed;
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo img {
+    max-width: 100px;
+    max-height: 100px;
+    margin: 10px;
+  }
+  
+  .navbar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .navbar li {
+    display: flex;
+    align-items: center;
+    margin: 0;
+  }
+  /* Обновленный стиль для жирного текста и картинки стрелочки */
+  .about-us a {
+    font-weight: bold;
+    position: relative;
+    display: inline-block;
+    padding-right: 30px; /* Увеличено расстояние для учета стрелочки */
+    margin-left: 10px;
+    transition: background 0.3s ease; /* Анимация изменения цвета фона */
+  }
+  
+  /* Обновленный стиль для картинки стрелочки */
+  .about-us a::after {
+    content: '→'; /* Замените на путь к вашему изображению стрелочки */
+    position: absolute;
+    top: 50%;
+    right: 10px; /* Расстояние от края справа */
+    transform: translateY(-50%); /* Позиционирование по вертикали */
+    opacity: 0; /* Начальная прозрачность */
+    transition: transform 0.3s ease, opacity 0.3s ease; /* Анимация при наведении */
+  }
+  
+  /* Анимация при наведении */
+  .about-us a:hover {
+    background: rgba(210, 237, 253, 0.1); /* Изменение цвета фона с 10% прозрачностью при наведении */
+  }
+  
+  .about-us a:hover::after {
+    transform: translateX(5px); /* Сдвигаем стрелочку вправо при наведении */
+    opacity: 1; /* Делаем стрелочку видимой */
+  }
+  
+  /* Добавление псевдоэлемента для анимации фона и текста при наведении */
+  .navbar li a {
+    position: relative;
+    color: #C8C8C8; /* Цвет текста по умолчанию */
+    margin-left: 20px;
+    transition: color 0.3s ease; /* Анимация изменения цвета текста */
+  }
+  
+  .navbar li a::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    background: rgba(210, 237, 253, 0);
+    transition: background 0.3s ease, width 0.3s ease; /* Добавлена анимация изменения ширины фона */
+  }
+  
+  /* Анимация при наведении на кнопки */
+  .navbar li a:hover::before {
+    background: rgba(210, 237, 253, 0.1);
+    width: 100%; /* Изменение ширины фона на 100% при наведении */
+  }
+  
+  .navbar li a:hover {
+    color: #F9B000; /* Изменение цвета текста при наведении */
+  }
+  
+  
+  .navbar li a[href="*"] {
+    color: white;
+    font-weight: bold;
+    pointer-events: none; /* Отменяет возможность взаимодействия с ссылкой */
+    cursor: default; /* Заменяет курсор на обычный, так как ссылка недоступна */
+    text-align: center; /* Центрирование текста */
+    width: 100%; /* Растягиваем текст на всю ширину элемента li */
+    box-sizing: border-box; /* Учитываем padding и border внутри элемента li */
+  }
+  .navbar a {
+    text-decoration: none;
+    color: #C8C8C8;
+    font-size: 14px;
+    padding: 10px;
+    display: block;
+  }
+  
+  .navbar a img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    display: block;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .navbar a:hover img {
+    transform: scale(1.2);
+    border: none;
+  }
+  
+  .main-content {
+    margin-left: 300px;
+  }
+  
+  .banner {
+    position: relative;
+  }
+  
+  .slider-container {
+    max-height: 550px;
+    display: flex;
+    margin: 0 auto;
+  }
+  
+  .slider {
+    overflow: hidden;
+  }
+  
+  .slide {
+    position: relative;
+    max-height: 615px;
+    max-width: 1620px;
+  }
+  .slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .text-overlay p {
+    font-family: "Outfit-Light", sans-serif;
+  }
+  
+  @font-face {
+    font-family: 'Outfit-Light';
+    src: url('/fonts/Outfit-Light.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  .phone-btn,
+  .explore-btn {
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    border: none;
+    border-radius: 3px;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  
+  .phone-btn {
+    background-color: #1C92FF;
+    color: #fff;
+    width: 198px;
+    height: 42px;
+    border-radius: 100px;
+    font-size: 16px;
+    position: absolute;
+    top: 120px; 
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .explore-btn {
+    color: #1C92FF;
+    border: 2px solid #1C92FF;
+    width: 198px;
+    height: 42px;
+    border-radius: 100px;
+    font-size: 16px;
+  }
+  
+  
+  .social-icons {
+    padding-top: 40px;
+    margin-top: 40px;
+    display: flex;
+    justify-content: center; /* Отцентровано по горизонтали */
+    align-items: center; /* Отцентровано по вертикали */
+    max-width: 300px;
+    margin: 0 25px;
+  
+  }
+  
+  .social-icons img {
+    width: 20px; /* Увеличен размер иконок */
+    height: 20px; /* Увеличен размер иконок */
+   
+    border: 2px solid #909090;
+    padding: 0px;
+    align-items: center;
+    border-radius: 30%; /* Используем 50% для создания круглых иконок */
+    max-width: 20px; /* Установлен максимальный размер ширины */
+    max-height: 20px; /* Установлен максимальный размер высоты */
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .social-icons a {
+    display: inline-block;
+    margin: 0 2px;
+    max-width: 42px;
+  }
+  
+  
+  .social-icons img:hover {
+    transform: scale(1.2);
+  }
+  
+  
+  .phone-numb {
+    font-size: 16px;
+    color: #ffffff;
+    background-color: transparent;
+    padding: 10px 0; 
+    cursor: pointer;
+    display: flex;
+    align-items: center; 
+  }
+  
+  .phone-numb:hover {
+    color: rgb(189, 23, 31); 
+  }
+  .mail-icon {
+    margin-left: 10px; 
+  }
+  .footer {
+    background-color: #292D35;
+    color: white;
+    text-align: center;
+    padding-top: 10px;
+    position: relative; 
+    bottom: -20px;
+    width: 100%;
+    margin-top: 30px;
+  }
+  
+  .social-icons a {
+    display: inline-block;
+    margin: 0 5px;
+  }
+  
+  .social-icons img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .social-icons img:hover {
+    transform: scale(1.2);
+  }
+  
+  .button-nomber {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .text-overlay {
+    position: relative;
+  }
+  .slide::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Затемнение с помощью полупрозрачного черного цвета */
+  }
+  /* .button-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    box-sizing: border-box;
+    padding: 20px;
+  } */
+  
+  /* .get-quote-btn,
+  .contact-us-btn {
+    background-color: #ff8c00;
+    color: white;
+    padding: 10px;
+    margin: 10px;
+    border: none;
+    cursor: pointer;
+    width: 150px;
+    height: 40px;
+  }
+  
+  .get-quote-btn,
+  .contact-us-btn {
+    background-color: #ff8c00;
+    color: white;
+    padding: 10px;
+    margin: 10px;
+    border: none;
+    cursor: pointer;
+    width: 150px;
+    height: 40px;
+  } */
+  
+  /* .container1 {
+    position: relative;
+    text-align: center;
+    color: white;
+  } */
+  
+  .text-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    text-align: center;
+    width: 100%;
+    max-width: 850px;
+  }
+  
+  .text-overlay h1 {
+    font-size: 36px;
+    text-decoration: underline;
+    margin-bottom: 10px; /* Добавлен отступ снизу */
+  }
+  
+  .text-overlay p {
+    text-align: center;
+    font-size: 16px;
+    max-width: 450px;
+    margin-bottom: 20px; /* Добавлен отступ снизу */
+    line-height: 3.6;
+  }
+  
+  .button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .get-quote-btn {
+    background-color: #F9B000;
+    color: white;
+    padding: 10px 20px;
+    margin: 0 10px;
+    border: none;
+    cursor: pointer;
+    width: 150px;
+    height: 40px;
+  }
+  
+  .get-quote-btn:hover {
+    background-color: #F9B000;
+  }
+  
+  
+  
+  
+  
+  .about-us-container,
+  .latest-work-container {
+    display: flex;
+    justify-content: space-between;
+    border-left: 1px solid #000; /* Обводка слева */
+    padding: 20px;
+  }
+  
+  .about-us,
+  .latest-work {
+    width: 45%;
+  }
+  
+  .about-us h2
+   {
+    text-align: left;
+    border-bottom: 1px solid #000; /* Линия под названием блока */
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .about-us p
+   {
+    text-align: left;
+    margin-bottom: 20px;
+  }
+  
+  .explore-btn2 {
+    background-color: transparent;
+    color: orange;
+    padding: 10px;
+    border: 1px solid orange;
+  
+    cursor: pointer;
+  }
+  .about-us-image img {
+    width: 500px;
+    height: 500px;
+    object-fit: cover; /* Сохраняет пропорции изображения и обрезает лишнее */
+    border-radius: 10px;
+  }
+  
+  slider-container1,
+  .slider-container2 {
+    max-width: 800px;
+    margin: 50px auto;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .about-us-container {
+    border: 1.5px solid #c7c7c7; 
+    border-radius: 5px;
+    padding: 20px; 
+    max-width: 800px; 
+    margin: 0 auto; /* Центрирование контейнера */
+    overflow: hidden; /* Используется, чтобы скругление обводки было более корректным */
+    margin-top: 70px;
+    margin-bottom: 50px;
+  
+  }
+  
+  .about-us2 {
+    font-family: Arial, sans-serif;
+    color: #909090;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  .about-us2 h2 {
+    font-size: 40px;
+    font-weight: 600; /* Semibold */
+    color: #000; /* Black */
+    margin-bottom: 15px;
+  }
+  
+  .about-us2 p {
+    font-size: 16px;
+    font-weight: 300; /* Light */
+    line-height: 1.6;
+    margin-bottom: 15px;
+  }
+  .latest-work-container {
+    border: 1.5px solid #c7c7c7; 
+    border-radius: 5px;
+    padding: 20px; 
+    max-width: 800px; 
+    margin: 0 auto; /* Центрирование контейнера */
+    overflow: hidden; /* Используется, чтобы скругление обводки было более корректным */
+  }
+  .latest-work  {
+    font-family: Arial, sans-serif;
+    color: #909090;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .latest-work h2 {
+    font-size: 40px;
+    font-weight: 600; /* Semibold */
+    color: #000; /* Black */
+    margin-bottom: 15px;
+  }
+  
+  .latest-work p {
+    font-size: 16px;
+    font-weight: 300; /* Light */
+    line-height: 1.6;
+    margin-bottom: 15px;
+  }
+  
+  
+  .lw-slider2 {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  
+  .lw-slide2 {
+    min-width: 100%;
+  }
+  
+  .lw-slide2 img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .prev1,
+  .next1,
+  .prev2,
+  .next2 {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    font-size: 18px;
+    color: #fff;
+    background-color: #1C92FF;
+    border: none;
+    padding: 10px;
+  }
+  
+  
+  .prev2 {
+    left: 10px;
+  }
+  
+  
+  .next2 {
+    right: 10px;
+  }
+  
+  .estimate-form-container {
+    display: flex;
+    justify-content: space-around;
+    background-color: #F2F2F2;
+    padding: 20px;
+  }
+  
+  .form-details {
+    display: flex;
+  }
+  
+  .white-block, .blue-block {
+    padding: 20px;
+    border-radius: 10px;
+    margin: 10px;
+  }
+  
+  .white-block {
+    text-align: center;
+    background-color: #FFFFFF;
+    color: #333333;
+  }
+  .white-block button {
+    display: inline-block; 
+    margin: 10px; 
+    padding: 10px 20px; 
+  }
+  .white-block .icon {
+    vertical-align: middle;
+    margin-right: 5px;
+  }
+  .white-block .contact-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .blue-block {
+    background-color: #171E2C;
+    color: #FFFFFF;
+    padding: 30px;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  label {
+    font-weight: bold;
+  }
+  
+  input, textarea {
+    padding: 10px;
+  }
+  
+  button {
+    background-color: #F9B000;
+    color: #FFFFFF;
+    padding: 10px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+  }
+  
+  button:hover {
+    background-color: #F9B000;
+  }
