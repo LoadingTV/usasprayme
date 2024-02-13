@@ -1,0 +1,385 @@
+/* Test 1: Check if the font-face is defined correctly */
+@font-face {
+  font-family: 'CustomFont';
+  src: url('/fonts/Outfit-Black.ttf') format('woff');
+}
+
+/* Test 2: Check if the body font-family is set correctly */
+body {
+  font-family: "Lato", "CustomFont", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Test 3: Check if the navbar width is set correctly */
+.navbar {
+  width: 300px;
+  background-color: #171E2C;
+  height: 100vh;
+  float: left;
+  position: fixed;
+}
+
+/* Test 4: Check if the logo image max-width and max-height are set correctly */
+.logo img {
+  max-width: 100px;
+  max-height: 100px;
+  margin: 10px;
+}
+
+/* Test 5: Check if the navbar ul has no list-style-type and padding */
+.navbar ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Test 6: Check if the about-us a has the correct styles for bold text and position */
+.about-us a {
+  font-weight: bold;
+  position: relative;
+  display: inline-block;
+  padding-right: 30px;
+  transition: background 0.3s ease;
+}
+
+/* Test 7: Check if the about-us a::after has the correct styles for the arrow image */
+.about-us a::after {
+  content: '→';
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  opacity: 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Test 8: Check if the navbar li a has the correct styles for color and transition */
+.navbar li a {
+  position: relative;
+  color: #C8C8C8;
+  transition: color 0.3s ease;
+}
+
+/* Test 9: Check if the navbar li a::before has the correct styles for background and transition */
+.navbar li a::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  background: rgba(210, 237, 253, 0);
+  transition: background 0.3s ease, width 0.3s ease;
+}
+
+/* Test 10: Check if the navbar li a:hover::before has the correct styles for background and width */
+.navbar li a:hover::before {
+  background: rgba(210, 237, 253, 0.1);
+  width: 100%;
+}
+
+/* Test 11: Check if the navbar li a:hover has the correct styles for color */
+.navbar li a:hover {
+  color: #F9B000;
+}
+
+/* Test 12: Check if the navbar li a[href="*"] has the correct styles for color and pointer-events */
+.navbar li a[href="*"] {
+  color: white;
+  font-weight: bold;
+  pointer-events: none;
+  cursor: default;
+  text-align: center;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Test 13: Check if the navbar a img has the correct styles for width, height, and border-radius */
+.navbar a img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+  display: block;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Test 14: Check if the main-content has the correct margin-left */
+.main-content {
+  margin-left: 300px;
+}
+
+/* Test 15: Check if the slider-container has the correct max-height and display */
+.slider-container {
+  max-height: 550px;
+  display: flex;
+  margin: 0 auto;
+}
+
+/* Test 16: Check if the slide img has the correct width, height, and object-fit */
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Test 17: Check if the text-overlay p has the correct font-family */
+.text-overlay p {
+  font-family: "Outfit-Light", sans-serif;
+}
+
+/* Test 18: Check if the Outfit-Light font-face is defined correctly */
+@font-face {
+  font-family: 'Outfit-Light';
+  src: url('/fonts/Outfit-Light.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Test 19: Check if the phone-btn and explore-btn have the correct position, border, and padding */
+.phone-btn,
+.explore-btn {
+  position: absolute;
+  top: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  border: none;
+  border-radius: 3px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+/* Test 20: Check if the phone-btn has the correct background-color, color, width, height, and position */
+.phone-btn {
+  background-color: #1C92FF;
+  color: #fff;
+  width: 198px;
+  height: 42px;
+  border-radius: 100px;
+  font-size: 16px;
+  position: absolute;
+  top: 120px; 
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Test 21: Check if the explore-btn has the correct color, border, width, height */
+.explore-btn {
+  color: #1C92FF;
+  border: 2px solid #1C92FF;
+  width: 198px;
+  height: 42px;
+  border-radius: 100px;
+  font-size: 16px;
+}
+
+/* Test 22: Check if the social-icons a has the correct display and margin */
+.social-icons a {
+  display: inline-block;
+  margin: 0 2px;
+}
+
+/* Test 23: Check if the social-icons has the correct display, max-width, margin, and justify-content */
+.social-icons {
+  display: flex;
+  max-width: 250px;
+  margin: 10;
+  justify-content: space-evenly;
+}
+
+/* Test 24: Check if the social-icons a has the correct margin */
+.social-icons a {
+  margin: 0 10px;
+}
+
+/* Test 25: Check if the social-icons img has the correct width, height, border-radius, border, max-width, max-height, padding, and object-fit */
+.social-icons img {
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  border: 1px solid #D2EDFD;
+  max-width: 20px;
+  max-height: 20px;
+  padding: 12px;
+  object-fit: cover;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Test 26: Check if the footer has the correct background-color, color, text-align, padding, position, bottom, and width */
+.footer {
+  background-color: #292D35;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+/* Test 27: Check if the social-icons a has the correct display and margin */
+.social-icons a {
+  display: inline-block;
+  margin: 0 5px;
+}
+
+/* Test 28: Check if the social-icons img has the correct width, height, border-radius, and transition */
+.social-icons img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Test 29: Check if the button-nomber has the correct position, top, left, and transform */
+.button-nomber {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Test 30: Check if the text-overlay has the correct position, top, left, transform, color, text-align, width, and max-width */
+.text-overlay {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  text-align: center;
+  width: 100%;
+  max-width: 850px;
+}
+
+/* Test 31: Check if the text-overlay h1 has the correct font-size, text-decoration, and margin-bottom */
+.text-overlay h1 {
+  font-size: 36px;
+  text-decoration: underline;
+  margin-bottom: 10px;
+}
+
+/* Test 32: Check if the text-overlay p has the correct font-size, margin-bottom, and line-height */
+.text-overlay p {
+  font-size: 16px;
+  margin-bottom: 20px;
+  line-height: 3.6;
+}
+
+/* Test 33: Check if the button-container has the correct display, justify-content, and align-items */
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Test 34: Check if the get-quote-btn has the correct background-color, color, padding, margin, border, cursor, width, and height */
+.get-quote-btn {
+  background-color: #ff8c00;
+  color: white;
+  padding: 10px 20px;
+  margin: 0 10px;
+  border: none;
+  cursor: pointer;
+  width: 150px;
+  height: 40px;
+}
+
+/* Test 35: Check if the get-quote-btn:hover has the correct background-color */
+.get-quote-btn:hover {
+  background-color: #e07f00;
+}
+
+/* Test 36: Check if the about-us-container and latest-work-container have the correct display, justify-content, border-left, and padding */
+.about-us-container,
+.latest-work-container {
+  display: flex;
+  justify-content: space-between;
+  border-leftи: 1px solid #000;
+  padding: 20px;
+}
+
+/* Test 37: Check if the about-us and latest-work have the correct width */
+.about-us,
+.latest-work {
+  width: 45%;
+}
+
+/* Test 38: Check if the about-us h2 has the correct text-align, border-bottom, padding-bottom, and margin-bottom */
+.about-us h2 {
+  text-align: left;
+  border-bottom: 1px solid #000;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+
+/* Test 39: Check if the about-us p has the correct text-align and margin-bottom */
+.about-us p {
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+/* Test 40: Check if the explore-btn2 has the correct background-color, color, padding, border, and cursor */
+.explore-btn2 {
+  background-color: transparent;
+  color: orange;
+  padding: 10px;
+  border: 1px solid orange;
+  cursor: pointer;
+}
+
+/* Test 41: Check if the about-us-image img has the correct width */
+.about-us-image img {
+  width: 100%;
+}
+
+/* Test 42: Check if the slider-container1 and slider-container2 have the correct max-width, margin, overflow, and position */
+slider-container1,
+.slider-container2 {
+  max-width: 800px;
+  margin: 50px auto;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Test 43: Check if the lw-slider2 has the correct display and transition */
+.lw-slider2 {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+/* Test 44: Check if the lw-slide2 has the correct min-width */
+.lw-slide2 {
+  min-width: 100%;
+}
+
+/* Test 45: Check if the lw-slide2 img has the correct width and height */
+.lw-slide2 img {
+  width: 100%;
+  height: auto;
+}
+
+/* Test 46: Check if the prev1, next1, prev2, and next2 have the correct cursor, position, font-size, color, background-color, border, and padding */
+.prev1,
+.next1,
+.prev2,
+.next2 {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  font-size: 18px;
+  color: #fff;
+  background-color: #1C92FF;
+  border: none;
+  padding: 10px;
+}
+
+/* Test 47: Check if the prev2 has the correct left position */
+.prev2 {
+  left: 10px;
+}
+
+/* Test 48: Check if the next2 has the correct right position */
+.next2 {
+  right: 10px;
+}
